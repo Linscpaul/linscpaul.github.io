@@ -3,11 +3,20 @@
 
 {% include head.html %}
 
-<header class="hover smooth">
-  {% unless site.show_minimal and site.navigation and site.external %}
-    <h1{% if site.navigation and site.external %}class="full" style="display:inline"{% endif %}><a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a></h1>
-  {% endunless %}
-  {% include menu.html menu=site.navigation %}
+<header class="site-header">
+  <h1 class="site-title">
+    <a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+  </h1>
+
+  {% if site.navigation %}
+    <nav class="site-nav">
+      <ul>
+        {% for item in site.navigation %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  {% endif %}
 </header>
 
 {{ content }}
