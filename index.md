@@ -17,13 +17,13 @@ I bridge the gap between complex analytical theory and robust, real-world execut
 
 ### A Passion for Quantitative Rigor
 
-#### Academic Excellence: 
+> #### Academic Excellence: 
 > My commitment to technical mastery is reflected in achieving an 'A' grade for every technical course in my Engineering degree.
 
-#### Analytical Leadership:
+> #### Analytical Leadership:
 > During my MBA, I was consistently ranked among the TOP 5% in all Digital-related courses, applying quantitative and qualitative analytics across Marketing, Finance, and HR functions.
 
-#### Enduring Quantitative Strength:
+> #### Enduring Quantitative Strength:
 > My mathematics grades have been consistently high throughout my entire education, from primary school through to my degree, underscoring a lifelong aptitude for numerical reasoning.
 
 ### Pioneering Engineering & Research
