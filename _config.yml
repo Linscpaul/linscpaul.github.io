@@ -18,9 +18,9 @@ show_frame: "/assets/images/background.svg"
 # Menu                          # for available icons see https://fontawesome.com/v5/icons/
 
 navigation:                     # accepts {file, title, url, icon, sidebaricon}
-  - {title: "Data Science", file: "archive.html"}
-  - {title: "AI", file: "ArtiIntel.html"}
-  - {title: "Blog", file: "index.md"}
+  - {title: "Data Science", file: "ds.html"}
+  - {title: "AI", file: "ai.html"}
+  - {title: "Blog", file: "bg.md"}
 
 external:                       # accepts {file, title, url, icon, sidebaricon}
   - {title: Mail, icon: envelope, url: "mailto:lsanchuan.m21@gmail.com"}
