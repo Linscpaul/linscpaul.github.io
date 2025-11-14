@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Home"
+title: "About Me"
 ---
 
 {% if site.show_excerpts %}
@@ -12,6 +12,6 @@ title: "Home"
     </article>
   {% endfor %}
 {% else %}
-  {% capture source %}{% include_relative archive.html title="Posts" %}{% endcapture %}
+  {% capture source %}{% include_relative archive.html title="About Me" %}{% endcapture %}
   {{ source | split: "---" | last }}
 {% endif %}
