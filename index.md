@@ -1,8 +1,8 @@
 ---
-title:  "About Me: Scaling AI for the Next Wave of Automation"
+title:  "About Me"
 layout: page
 ---
-
+## Scaling AI for the Next Wave of Automation
 ![Coffee](https://user-images.githubusercontent.com/4943215/74586455-c8048300-4fe7-11ea-84ba-aa49f3abb014.jpeg)
 
 My professional journey has consistently placed me at the forefront of disruptive technological revolutions. From building foundational engineering systems to shaping corporate strategy with data, I have witnessed and driven massive-scale automation. Now, I am uniquely poised to ride the current AI wave, focusing my efforts on scaling intelligent systems to unlock their immense potential for enterprise-wide automation.
@@ -17,13 +17,13 @@ I bridge the gap between complex analytical theory and robust, real-world execut
 
 ### A Passion for Quantitative Rigor
 
-# Academic Excellence: 
+#### Academic Excellence: 
 > My commitment to technical mastery is reflected in achieving an 'A' grade for every technical course in my Engineering degree.
 
-# Analytical Leadership:
+#### Analytical Leadership:
 > During my MBA, I was consistently ranked among the TOP 5% in all Digital-related courses, applying quantitative and qualitative analytics across Marketing, Finance, and HR functions.
 
-# Enduring Quantitative Strength:
+#### Enduring Quantitative Strength:
 > My mathematics grades have been consistently high throughout my entire education, from primary school through to my degree, underscoring a lifelong aptitude for numerical reasoning.
 
 ### Pioneering Engineering & Research
