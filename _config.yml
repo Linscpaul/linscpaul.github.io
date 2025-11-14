@@ -1,6 +1,6 @@
 title: "Paul LIN"
 author: "Paul Lin"
-description: "My blog"
+description: "This is my blog"
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
@@ -10,7 +10,7 @@ date_format: "%B %d, %Y"
 
 show_excerpts: false             # show article excerpts instead of archive list on the home page
 show_frame: true                # display a grey frame on large screens
-show_sidebar: false             # show a sidebar instead of the usual header
+show_sidebar: true             # show a sidebar instead of the usual header
 show_minimal: false             # remove all clutter
 
 #show_frame: "/assets/images/background.svg"
