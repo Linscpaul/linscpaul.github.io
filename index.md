@@ -12,8 +12,7 @@ I bridge the gap between complex analytical theory and robust, real-world execut
 ---
 
 ## 💡 Foundations in Data & Optimization
-
-> My academic background is rooted in deep quantitative excellence and pioneering engineering projects:
+My academic background is rooted in deep quantitative excellence and pioneering engineering projects:
 
 ### A Passion for Quantitative Rigor
 
@@ -28,31 +27,57 @@ I bridge the gap between complex analytical theory and robust, real-world execut
 
 ### Pioneering Engineering & Research
 
-> Brain-Controlled Robotics (NTU Innovation Project): I led a project to build an Unmanned Aerial Vehicle (UAV) from scratch. Our ambitious focus was on brain-controlled navigation, requiring us to implement machine learning chips for brainwave detection and training. This project gave me early, hands-on experience with the powerful synergy between sensors, data acquisition, and machine learning.
+> #### Brain-Controlled Robotics (NTU Innovation Project)
+> I led a project to build an Unmanned Aerial Vehicle (UAV) from scratch. Our ambitious focus was on brain-controlled navigation, requiring us to implement machine learning chips for brainwave detection and training. This project gave me early, hands-on experience with the powerful synergy between sensors, data acquisition, and machine learning.
 >
-> Optimization & Simulation (NTU Final Year Project): My final year research involved a complex optimization and simulation model designed to significantly reduce the carbon footprint in commercial buildings.
+> #### Optimization & Simulation (NTU Final Year Project):
+> My final year research involved a complex optimization and simulation model designed to significantly reduce the carbon footprint in commercial buildings.
 >
-> Master’s Focus: I further specialized my expertise with a Master's degree focused on Operations Research, Applied Predictive Methods, Forecasting, and Optimization.
+> #### Master’s Focus:
+> I further specialized my expertise with a Master's degree focused on Operations Research, Applied Predictive Methods, Forecasting, and Optimization.
 
 ---
 
 ## 🏭 Driving Industrial & Corporate Automation
+Upon graduating, I quickly realized that data analytics is not a standalone tool but a critical enabler for comprehensive, technology-driven business transformation. My career highlights reflect a history of implementing technology at an industrial mega-scale:
 
-> Upon graduating, I quickly realized that data analytics is not a standalone tool but a critical enabler for comprehensive, technology-driven business transformation. My career highlights reflect a history of implementing technology at an industrial mega-scale:
+### Massive-Scale Industrial Automation
+I have personally led and witnessed the disruptive impact of technology across two landmark engineering projects:
 
-### A Passion for Quantitative Rigor
+> #### Future-Proofing Construction:
+> Developing a highly automated pre-cast factory that fundamentally addressed critical industry challenges like labor shortage through intelligent systems and data integration.
 
-> ==Academic Excellence==: My commitment to technical mastery is reflected in achieving an 'A' grade for every technical course in my Engineering degree.
->
-> ==Analytical Leadership==: During my MBA, I was consistently ranked among the TOP 5% in all Digital-related courses, applying quantitative and qualitative analytics across Marketing, Finance, and HR functions.
->
-> Enduring Quantitative Strength: My mathematics grades have been consistently high throughout my entire education, from primary school through to my degree, underscoring a lifelong aptitude for numerical reasoning.
+> #### Unmanned MegaPort Development:
+> Contributing to the creation of a highly automated, unmanned mega port, utilizing a multitude of advanced technologies and complex data analytics to optimize global logistics.
 
-### Pioneering Engineering & Research
+### Strategic Business Transformation
+As my career progressed, I leveraged my analytical and automation expertise to shape high-level business and corporate strategy:
 
-> Brain-Controlled Robotics (NTU Innovation Project): I led a project to build an Unmanned Aerial Vehicle (UAV) from scratch. Our ambitious focus was on brain-controlled navigation, requiring us to implement machine learning chips for brainwave detection and training. This project gave me early, hands-on experience with the powerful synergy between sensors, data acquisition, and machine learning.
->
-> Optimization & Simulation (NTU Final Year Project): My final year research involved a complex optimization and simulation model designed to significantly reduce the carbon footprint in commercial buildings.
+>#### Strategic Investment:
+>I have personally led and witnessed the disruptive impact of technology across two landmark engineering projects:
+
+> #### Business Revival:
+> Utilized a blend of deep quantitative and qualitative analysis to successfully revive a banking business that was on the brink of failure.
+
+> #### Center of Excellence (CoE):
+> Established a --- Data and Automation Center of Excellence --- to modernize and fundamentally revive traditional business operations.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 >
 > Master’s Focus: I further specialized my expertise with a Master's degree focused on Operations Research, Applied Predictive Methods, Forecasting, and Optimization.
 ## Heading Two (h2)
