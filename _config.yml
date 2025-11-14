@@ -18,9 +18,9 @@ show_frame: "/assets/images/unicornbg.svg"
 # Menu                          # for available icons see https://fontawesome.com/v5/icons/
 
 navigation:                     # accepts {file, title, url, icon, sidebaricon}
-  - {title: "Data Science", file: "ds.html"}
-  - {title: "AI", file: "ai.html"}
-  - {title: "Blog", file: "bg.html"}
+  - {title: "Data Scientist", file: "ds.html"}
+  - {title: "AI Engineer", file: "ai.html"}
+  - {title: "Business Blog", file: "bg.html"}
 
 external:                       # accepts {file, title, url, icon, sidebaricon}
   - {title: Mail, icon: envelope, url: "mailto:lsanchuan.m21@gmail.com"}
