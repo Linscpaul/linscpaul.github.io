@@ -1,0 +1,13 @@
+---
+title: "Artificial Intelligence"
+layout: default
+---
+
+<main>
+  <header><h1>{{ include.title | default: page.title }}</h1></header>
+  <nav class="smooth">
+    {% for aipost in site.aiposts %}
+    <div><time datetime="{{ aipost.date | date_to_xmlschema }}">{{ aipost.date | date: "%Y-%m-%d" }}</time><a href="{{ aipost.url | relative_url }}">{{ aipost.title }}</a></div>
+    {% endfor %}
+  </nav>
+</main>
