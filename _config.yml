@@ -20,7 +20,7 @@ show_frame: "/assets/images/background.svg"
 navigation:                     # accepts {file, title, url, icon, sidebaricon}
   - {title: "Data Science", file: "archive.html"}
   - {title: "AI", file: "ArtiIntel.html"}
-  - {title: "Blog", file: "/blog.md"}
+  - {title: "Blog", file: "index.md"}
 
 external:                       # accepts {file, title, url, icon, sidebaricon}
   - {title: Mail, icon: envelope, url: "mailto:lsanchuan.m21@gmail.com"}
