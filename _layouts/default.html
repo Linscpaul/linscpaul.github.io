@@ -11,13 +11,11 @@
 </header>
 
 {{ content }}
+      </div>
+    </main>
 
-{%- include site.footer -%}
-<footer class="hover">
-  <div>{{ site.description }}</div>
-  {% include menu.html menu=site.footer %}
-  {% include menu.html menu=site.external %}
-</footer>
-{%- endif -%}
+    {%- include footer.html -%}
+
+  </body>
 
 </html>
