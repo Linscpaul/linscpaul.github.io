@@ -1,15 +1,57 @@
 ---
-title:  "About Me"
+title:  "About Me: Scaling AI for the Next Wave of Automation"
 layout: page
 ---
 
 ![Coffee](https://user-images.githubusercontent.com/4943215/74586455-c8048300-4fe7-11ea-84ba-aa49f3abb014.jpeg)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+My professional journey has consistently placed me at the forefront of disruptive technological revolutions. From building foundational engineering systems to shaping corporate strategy with data, I have witnessed and driven massive-scale automation. Now, I am uniquely poised to ride the current AI wave, focusing my efforts on scaling intelligent systems to unlock their immense potential for enterprise-wide automation.
 
-Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit.
+I bridge the gap between complex analytical theory and robust, real-world execution, ensuring that Data Science and AI translate into tangible, automated outcomes.
 
+---
 
+## 💡 Foundations in Data & Optimization
+
+> My academic background is rooted in deep quantitative excellence and pioneering engineering projects:
+
+### A Passion for Quantitative Rigor
+
+> ==Academic Excellence==: My commitment to technical mastery is reflected in achieving an 'A' grade for every technical course in my Engineering degree.
+>
+> <mark>Analytical Leadership</mark>: During my MBA, I was consistently ranked among the TOP 5% in all Digital-related courses, applying quantitative and qualitative analytics across Marketing, Finance, and HR functions.
+>
+> <mark>Enduring Quantitative Strength</mark>: My mathematics grades have been consistently high throughout my entire education, from primary school through to my degree, underscoring a lifelong aptitude for numerical reasoning.
+
+### Pioneering Engineering & Research
+
+> Brain-Controlled Robotics (NTU Innovation Project): I led a project to build an Unmanned Aerial Vehicle (UAV) from scratch. Our ambitious focus was on brain-controlled navigation, requiring us to implement machine learning chips for brainwave detection and training. This project gave me early, hands-on experience with the powerful synergy between sensors, data acquisition, and machine learning.
+>
+> Optimization & Simulation (NTU Final Year Project): My final year research involved a complex optimization and simulation model designed to significantly reduce the carbon footprint in commercial buildings.
+>
+> Master’s Focus: I further specialized my expertise with a Master's degree focused on Operations Research, Applied Predictive Methods, Forecasting, and Optimization.
+
+---
+
+## 🏭 Driving Industrial & Corporate Automation
+
+> Upon graduating, I quickly realized that data analytics is not a standalone tool but a critical enabler for comprehensive, technology-driven business transformation. My career highlights reflect a history of implementing technology at an industrial mega-scale:
+
+### A Passion for Quantitative Rigor
+
+> ==Academic Excellence==: My commitment to technical mastery is reflected in achieving an 'A' grade for every technical course in my Engineering degree.
+>
+> ==Analytical Leadership==: During my MBA, I was consistently ranked among the TOP 5% in all Digital-related courses, applying quantitative and qualitative analytics across Marketing, Finance, and HR functions.
+>
+> Enduring Quantitative Strength: My mathematics grades have been consistently high throughout my entire education, from primary school through to my degree, underscoring a lifelong aptitude for numerical reasoning.
+
+### Pioneering Engineering & Research
+
+> Brain-Controlled Robotics (NTU Innovation Project): I led a project to build an Unmanned Aerial Vehicle (UAV) from scratch. Our ambitious focus was on brain-controlled navigation, requiring us to implement machine learning chips for brainwave detection and training. This project gave me early, hands-on experience with the powerful synergy between sensors, data acquisition, and machine learning.
+>
+> Optimization & Simulation (NTU Final Year Project): My final year research involved a complex optimization and simulation model designed to significantly reduce the carbon footprint in commercial buildings.
+>
+> Master’s Focus: I further specialized my expertise with a Master's degree focused on Operations Research, Applied Predictive Methods, Forecasting, and Optimization.
 ## Heading Two (h2)
 
 ### Heading Three (h3)
