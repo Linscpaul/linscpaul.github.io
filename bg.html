@@ -1,0 +1,13 @@
+---
+title: "Blog"
+layout: default
+---
+
+<main>
+  <header><h1>{{ include.title | default: page.title }}</h1></header>
+  <nav class="smooth">
+    {% for bgpost in site.bgposts %}
+    <div><time datetime="{{ bgpost.date | date_to_xmlschema }}">{{ bgpost.date | date: "%Y-%m-%d" }}</time><a href="{{ bgpost.url | relative_url }}">{{ bgpost.title }}</a></div>
+    {% endfor %}
+  </nav>
+</main>
