@@ -18,9 +18,9 @@ show_minimal: false             # remove all clutter
 # Menu                          # for available icons see https://fontawesome.com/v5/icons/
 
 navigation:                     # accepts {file, title, url, icon, sidebaricon}
-  - {title:"Data Science", file: "/datascience.md"}
-  - {title:"AI", file: "artificialintelligence.md"}
-  - {title:"Blog", file: "/blog.md"}
+  - {title: "Data Science", file: "/datascience.md"}
+  - {title: "AI", file: "artificialintelligence.md"}
+  - {title: "Blog", file: "/blog.md"}
 
 external:                       # accepts {file, title, url, icon, sidebaricon}
   - {title: Mail, icon: envelope, url: "mailto:lsanchuan.m21@gmail.com"}
