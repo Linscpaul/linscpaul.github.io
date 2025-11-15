@@ -17,7 +17,7 @@ My academic background is rooted in deep quantitative excellence and pioneering 
 ### A Passion for Quantitative Rigor
 
 > #### Academic Excellence: 
-> My commitment to technical mastery is reflected in achieving an ['A' grade for every technical course] in my Engineering degree.
+My commitment to technical mastery is reflected in achieving an ['A' grade for every technical course] in my Engineering degree.
 
 > #### Analytical Leadership:
 > During my MBA, I was consistently ranked among the [TOP 5% in all Digital-related courses], applying quantitative and qualitative analytics across Marketing, Finance, and HR functions.
