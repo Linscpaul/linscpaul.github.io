@@ -1,10 +1,14 @@
 ---
-title: "Artificial Intelligence"
+title: "🧠 AI & MLOps: From Concept to Enterprise Scale"
 layout: default
 ---
 
 <main>
-  <header><h1>{{ include.title | default: page.title }}</h1></header>
+  <header>
+    <h1>{{ include.title | default: page.title }}</h1>
+    <p>This section showcases my deep expertise in both advanced model development and production-grade deployment, 
+      focusing on turning cutting-edge research into reliable, scalable applications.</p>
+  </header>
   <nav class="smooth">
     {% for aipost in site.aiposts %}
     <div><time datetime="{{ aipost.date | date_to_xmlschema }}">{{ aipost.date | date: "%Y-%m-%d" }}</time><a href="{{ aipost.url | relative_url }}">{{ aipost.title }}</a></div>
