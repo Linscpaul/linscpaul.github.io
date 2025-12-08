@@ -33,3 +33,8 @@ comments:
 
 plugins:
  - jekyll-feed
+
+collections:
+  aiposts:
+    output: true
+    permalink: /ai/:name/
