@@ -18,8 +18,8 @@ show_frame: "/assets/images/unicornbg.svg"
 # Menu                          # for available icons see https://fontawesome.com/v5/icons/
 
 navigation:                     # accepts {file, title, url, icon, sidebaricon}
-  - {title: "Data Scientist", file: "ds.html"}
-  - {title: "AI Engineer", file: "ai.html"}
+  - {title: "AI Engineer", file: "ds.html"}
+  - {title: "Data Scientist", file: "ai.html"}
   - {title: "Business Blog", file: "bg.html"}
 
 external:                       # accepts {file, title, url, icon, sidebaricon}
