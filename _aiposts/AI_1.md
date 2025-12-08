@@ -1,4 +1,3 @@
-
 ---
 title:  "OpenAI Agents SDK Framework"
 layout: post
