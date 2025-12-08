@@ -1,25 +1,43 @@
 
 ---
-title:  "Markdown examples"
+title:  "OpenAI Agents SDK Framework"
 layout: post
 ---
+## Building an Automated Sales Outreach App
 
-![Coffee](https://user-images.githubusercontent.com/4943215/74586455-c8048300-4fe7-11ea-84ba-aa49f3abb014.jpeg)
+### Key Features Of This App 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+###### Agentic Workflow:
 
-Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit.
+This is a system where different AI "agents" work together like a team.
 
+###### Multiple Brains:
 
-## Heading Two (h2)
+This systems use different LLM models from OpenAI, Google, and others to make our agents smarter.
 
-### Heading Three (h3)
+###### Lots of Tools:
 
-#### Heading Four (h4)
+The agents would use various tools, some powered by AI and others that are regular computer functions, like sending emails.
 
-##### Heading Five (h5)
+###### Handoffs:
 
-###### Heading Six (h6)
+The main agent can pass tasks to other specialized agents. It's like a manager delegating work to team members.
+
+###### Guardrails:
+We'll set up rules to control what our agents can say and do, making sure they don't make mistakes or say the wrong things.
+
+### How It Works 
+
+#### This program creates sales emails and sends them automatically. Here's the breakdown:
+
+**Planning Agent:** 
+This is the boss agent. It tells three "content writing" agents to create different versions of a sales email.
+**Choosing the Best Email:** 
+The planning agent looks at the three versions and picks the one it thinks is most likely to get a good response.
+**Handoff to Email Manager:** 
+The planning agent then hands off the chosen email to another agent called the "Email Manager."
+**Email Manager's Job:** 
+The Email Manager turns the email into a fancy HTML format, creates a catchy subject line, and sends it off to the customer.
 
 
 ## Blockquotes
@@ -54,19 +72,48 @@ Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, tur
 Source code can be included by fencing the code with three backticks. Syntax highlighting works automatically when specifying the language after the backticks.
 
 ````
-```javascript
-function foo () {
-    return "bar";
-}
+```python
+from dotenv import load_dotenv
+from openai import AsyncOpenAI
+from agents import Agent, Runner, trace, function_tool, OpenAIChatCompletionsModel, input_guardrail, GuardrailFunctionOutput
+from typing import Dict
+import sendgrid
+import os
+from sendgrid.helpers.mail import Mail, Email, To, Content
+from pydantic import BaseModel
 ```
 ````
 
 This would be rendered as:
 
-```javascript
-function foo () {
-    return "bar";
-}
+```python
+load_dotenv(override=True)
+openai_api_key = os.getenv('OPENAI_API_KEY')
+google_api_key = os.getenv('GOOGLE_API_KEY')
+deepseek_api_key = os.getenv('DEEPSEEK_API_KEY')
+
+
+# print if keys are found in the .env file
+if openai_api_key:
+   print(f"OpenAI API Key exists and begins {openai_api_key[:8]}")
+else:
+   print("OpenAI API Key not set")
+
+
+if google_api_key:
+   print(f"Google API Key exists and begins {google_api_key[:2]}")
+else:
+   print("Google API Key not set (and this is optional)")
+
+
+if deepseek_api_key:
+   print(f"DeepSeek API Key exists and begins {deepseek_api_key[:3]}")
+else:
+   print("DeepSeek API Key not set (and this is optional)")
+
+
+GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
+DEEPSEEK_BASE_URL = "https://api.deepseek.com/v1"
 ```
 
 ## Lists
