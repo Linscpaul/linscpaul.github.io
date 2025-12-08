@@ -49,7 +49,6 @@ Before we can start building our app, we need to set up our computer with the ri
 
 First, we need to import some libraries that will help us build our app. Think of it like getting all the necessary LEGO bricks before starting to build a LEGO set.
 
-````
 ```python
 from dotenv import load_dotenv
 from openai import AsyncOpenAI
@@ -60,7 +59,6 @@ import os
 from sendgrid.helpers.mail import Mail, Email, To, Content
 from pydantic import BaseModel
 ```
-````
 
 ### Module 2: Configuring the .env File
 
@@ -70,7 +68,6 @@ Why .env? We don't want to share our secret keys with everyone, so we store them
 
 How to Set Up: Create a file named .env in the same folder as your project. Inside, put your keys like this: (if you have any doubts, please ask ChatGPT for step-by-step guide)
 
-````
 ```python
 # this is configured in the .env file saved in the project folder. Please do not execute the codes in the .ipynb notebook.
 OPENAI_API_KEY=your api key
@@ -82,13 +79,11 @@ TELEGRAM_CHAT_ID=your chat id
 SENDGRID_API_KEY=your sendgrid api key
 DEEPSEEK_API_KEY=your deepseek api key
 ```
-````
 
 Important: Don't share your .env file with anyone!
 
 Now, let's load the keys from the .env file into our program:
 
-````
 ```python
 load_dotenv(override=True)
 openai_api_key = os.getenv('OPENAI_API_KEY')
@@ -115,7 +110,6 @@ else:
 GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
 DEEPSEEK_BASE_URL = "https://api.deepseek.com/v1"
 ```
-````
 
 ## Part 2: The Sales Manager Agent
 
