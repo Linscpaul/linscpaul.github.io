@@ -72,12 +72,8 @@ How to Set Up: Create a file named .env in the same folder as your project. Insi
 # this is configured in the .env file saved in the project folder. Please do not execute the codes in the .ipynb notebook.
 OPENAI_API_KEY=your api key
 GOOGLE_API_KEY=your api key
-PUSHOVER_USER=your user id
-PUSHOVER_TOKEN=your token
-TELEGRAM_BOT_TOKEN=your telegram token
-TELEGRAM_CHAT_ID=your chat id
-SENDGRID_API_KEY=your sendgrid api key
 DEEPSEEK_API_KEY=your deepseek api key
+SENDGRID_API_KEY=your sendgrid api key
 ```
 
 Important: Don't share your .env file with anyone!
@@ -200,7 +196,7 @@ To create an agent, use the Agent() syntax from the OpenAI Agents SDK. This requ
 ```python
 sales_agent1 = Agent(name="DeepSeek Sales Agent", instructions=instructions1, model=deepseek_model)
 sales_agent2 =  Agent(name="Gemini Sales Agent", instructions=instructions2, model=gemini_model)
-sales_agent3  = Agent(name="Llama3.3 Sales Agent", instructions=instructions3, model=llama3_3_model)
+sales_agent3  = Agent(name="GPT Sales Agent", instructions=instructions3, model=gpt-4o-mini)
 ```
 
 To convert the three content-writing agents into tools, use the .as_tool() syntax provided by the OpenAI Agents SDK. You also need to provide a description explaining the purpose of each tool.
