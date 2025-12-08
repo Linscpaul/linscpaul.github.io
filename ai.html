@@ -10,8 +10,12 @@ layout: default
       focusing on turning cutting-edge research into reliable, scalable applications.</p>
   </header>
   <nav class="smooth">
-    {% for aipost in site.aiposts %}
-    <div><time datetime="{{ aipost.date | date_to_xmlschema }}">{{ aipost.date | date: "%Y-%m-%d" }}</time><a href="{{ aipost.url | relative_url }}">{{ aipost.title }}</a></div>
+    {% assign reversed = site.aiposts | reverse %}
+    {% for aipost in reversed %}
+    <div>
+    {{ forloop.index }}. 
+    <a href="{{ aipost.url | relative_url }}">{{ aipost.title }}</a>
+    </div>
     {% endfor %}
   </nav>
 </main>
