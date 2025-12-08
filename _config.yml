@@ -38,3 +38,11 @@ collections:
   aiposts:
     output: true
     permalink: /ai/:name/
+
+  dsposts:
+    output: true
+    permalink: /ds/:name/
+
+  bgposts:
+    output: true
+    permalink: /bg/:name/
