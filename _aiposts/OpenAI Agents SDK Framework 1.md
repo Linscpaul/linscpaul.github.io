@@ -1,5 +1,5 @@
 ---
-title:  "OpenAI Agents SDK Framework"
+title:  "AI Agent Framework - OpenAI Agents SDK"
 layout: post
 ---
 ## Building an Automated Sales Outreach App
