@@ -1,5 +1,5 @@
 ---
-title:  "AI Agent Framework - OpenAI Agents SDK"
+title:  "OpenAI Agents SDK Framework_Automated Sales App"
 layout: post
 ---
 ## Building an Automated Sales Outreach App
@@ -119,7 +119,6 @@ The Sales Manager is the brain of our operation. It decides which sales email is
 
 First, we need to give the Sales Manager some instructions:
 
-````
 ```python
 sales_manager_instructions = """
 You are a Sales Manager at ComplAI. Your goal is to find the single best cold sales email using the sales_agent tools.
@@ -133,7 +132,6 @@ Crucial Rules:
 - You must hand off exactly ONE email to the Email Manager — never more than one.
 """
 ```
-````
 
 ### Guardrails: Keeping Things Safe
 
@@ -141,7 +139,6 @@ We want to make sure people don't put personal names in the emails, this is to p
 
 The OpenAI Agents SDK framework allows you to create agents using the following syntax: Agent(name, instructions, model, ...). We will use this syntax repeatedly throughout this application, as we will be creating several agents.
 
-````
 ```python
 class NameCheckOutput(BaseModel):
    is_name_in_message: bool
@@ -154,9 +151,7 @@ guardrail_agent = Agent(
    model="gpt-4o-mini"
 )
 ```
-````
 
-````
 ```python
 @input_guardrail
 async def guardrail_against_name(ctx, agent, message):
@@ -164,11 +159,9 @@ async def guardrail_against_name(ctx, agent, message):
    is_name_in_message = result.final_output.is_name_in_message
    return GuardrailFunctionOutput(output_info={"found_name": result.final_output},tripwire_triggered=is_name_in_message)
 ```
-````
 
 We will create the sales_manager agent using the OpenAI Agents SDK framework. This agent can call tools, which we will define in the next step. A guardrail is also implemented to prevent users from including personal names in the instructions or prompts given to the sales_manager agent.
 
-````
 ```python
 sales_manager = Agent(
    name="Sales Manager",
@@ -179,7 +172,6 @@ sales_manager = Agent(
    input_guardrails=[guardrail_against_name]
    )
 ```
-````
 
 ## Part 3: Creating the Sales Agent Tools
 
@@ -189,7 +181,6 @@ These tools are like different writers with unique styles. They'll each create a
 
 We are essentially creating three content-writing agents, each with a distinct writing style. The following instructions or prompts will guide each agent's behavior, and you are encouraged to experiment with different prompts to explore various outcomes. 
 
-````
 ```python
 instructions1 = "You are a sales agent working for ComplAI, \
 a company that provides a SaaS tool for ensuring SOC2 compliance and preparing for audits, powered by AI. \
@@ -203,36 +194,29 @@ instructions3 = "You are a busy sales agent working for ComplAI, \
 a company that provides a SaaS tool for ensuring SOC2 compliance and preparing for audits, powered by AI. \
 You write concise, to the point cold emails."
 ```
-````
 
 To create an agent, use the Agent() syntax from the OpenAI Agents SDK. This requires you to provide the agent's name, instructions (or prompt), and the LLM model you want it to use.
 
-````
 ```python
 sales_agent1 = Agent(name="DeepSeek Sales Agent", instructions=instructions1, model=deepseek_model)
 sales_agent2 =  Agent(name="Gemini Sales Agent", instructions=instructions2, model=gemini_model)
 sales_agent3  = Agent(name="Llama3.3 Sales Agent", instructions=instructions3, model=llama3_3_model)
 ```
-````
 
 To convert the three content-writing agents into tools, use the .as_tool() syntax provided by the OpenAI Agents SDK. You also need to provide a description explaining the purpose of each tool.
 
-````
 ```python
 description = "Write a cold sales email"
 tool1 = sales_agent1.as_tool(tool_name="sales_agent1", tool_description=description)
 tool2 = sales_agent2.as_tool(tool_name="sales_agent2", tool_description=description)
 tool3 = sales_agent3.as_tool(tool_name="sales_agent3", tool_description=description)
 ```
-````
 
 Now, let's create the tools package, which will be passed to the sales_manager agent.
 
-````
 ```python
 tools = [tool1, tool2, tool3] #this definition is passed to the sales-manager agent
 ```
-````
 
 ## Part 4: Creating the Handoff - The Email Manager Agent
 
@@ -242,7 +226,6 @@ The Email Manager takes the best email and sends it out. It uses tools to create
 
 When the sales_manager agent triggers the handoff to the emailer_agent, the emailer_agent follows its instructions and uses the email_tools, which include the subject_tool, html_tool, and send_html_email.
 
-````
 ```python
 instructions ="You are an email formatter and sender. You receive the body of an email to be sent. \
 You first use the subject_writer tool to write a subject for the email, then use the html_converter tool to convert the body to HTML. \
@@ -257,13 +240,11 @@ emailer_agent = Agent(
 
 handoffs = [emailer_agent] #this definition is passed to the sales-manager agent
 ```
-````
 
 ### Module 2: Creating the Subject Writer and HTML Converter Tools
 
 Both tools are essentially agents powered by LLMs. These agents are created using the Agent(name, instructions, model) syntax from the OpenAI Agents SDK, and then converted into tools using the .as_tool(tool_name, tool_description) syntax, also from the OpenAI Agents SDK.
 
-````
 ```python
 subject_instructions = "You can write a subject for a cold sales email. \
 You are given a message and you need to write a subject for an email that is likely to get a response."
@@ -278,13 +259,11 @@ subject_tool = subject_writer.as_tool(tool_name="subject_writer", tool_descripti
 html_converter = Agent(name="HTML email body converter", instructions=html_instructions, model="gpt-4o-mini")
 html_tool = html_converter.as_tool(tool_name="html_converter",tool_description="Convert a text email body to an HTML email body")
 ```
-````
 
 ### Module 3: Creating the Send Email Tool
 
 Let's write the send_html_email function and convert it into a tool using the @function_tool syntax from the OpenAI Agents SDK. 
 
-````
 ```python
 @function_tool
 def send_html_email(subject: str, html_body: str) -> Dict[str, str]:
@@ -297,54 +276,11 @@ def send_html_email(subject: str, html_body: str) -> Dict[str, str]:
    sg.client.mail.send.post(request_body=mail)
    return {"status": "success"}
 ```
-````
 
 These three tools are now packaged together as email_tools, which will then be passed to the handoff emailer_agent.
 
-````
 ```python
 email_tools = [subject_tool, html_tool, send_html_email]
 ```
-````
 
 Now, you should have a good understanding of how to use the OpenAI Agents SDK to create an automated app with agents!
-
-
-## Lists
-
-### Unordered
-
-* First item
-* Second item
-* Third item
-    * First nested item
-    * Second nested item
-
-### Ordered
-
-1. First item
-2. Second item
-3. Third item
-    1. First nested item
-    2. Second nested item
-
-### Multiline
-
-> What do you get when you cross an insomniac, an unwilling agnostic and a dyslexic?
->
-> You get someone who stays up all night torturing himself mentally over the question of whether or not there's a dog.
->
-> – _Hal Incandenza_
-
-## Horizontal Rule
-
----
-
-## Table
-
-| Title 1          | Title 2          | Title 3         | Title 4         |
-|------------------|------------------|-----------------|-----------------|
-| First entry      | Second entry     | Third entry     | Fourth entry    |
-| Fifth entry      | Sixth entry      | Seventh entry   | Eight entry     |
-| Ninth entry      | Tenth entry      | Eleventh entry  | Twelfth entry   |
-| Thirteenth entry | Fourteenth entry | Fifteenth entry | Sixteenth entry |
