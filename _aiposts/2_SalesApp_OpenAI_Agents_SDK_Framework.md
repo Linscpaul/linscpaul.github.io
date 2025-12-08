@@ -40,6 +40,7 @@ The Email Manager turns the email into a fancy HTML format, creates a catchy sub
 **Important Note:** 
 The code examples below are like building blocks. You need to create the tools before you create the agents that use them. So, we'll start with the tools and work our way up to the main agent.
 
+---
 
 ## Part 1: Setting Up the Environment
 
@@ -107,6 +108,8 @@ GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
 DEEPSEEK_BASE_URL = "https://api.deepseek.com/v1"
 ```
 
+---
+
 ## Part 2: The Sales Manager Agent
 
 The Sales Manager is the brain of our operation. It decides which sales email is the best and tells the Email Manager to send it.
@@ -169,6 +172,8 @@ sales_manager = Agent(
    )
 ```
 
+---
+
 ## Part 3: Creating the Sales Agent Tools
 
 These tools are like different writers with unique styles. They'll each create a sales email draft.
@@ -213,6 +218,8 @@ Now, let's create the tools package, which will be passed to the sales_manager a
 ```python
 tools = [tool1, tool2, tool3] #this definition is passed to the sales-manager agent
 ```
+
+---
 
 ## Part 4: Creating the Handoff - The Email Manager Agent
 
@@ -278,5 +285,7 @@ These three tools are now packaged together as email_tools, which will then be p
 ```python
 email_tools = [subject_tool, html_tool, send_html_email]
 ```
+
+---
 
 Now, you should have a good understanding of how to use the OpenAI Agents SDK to create an automated app with agents!
