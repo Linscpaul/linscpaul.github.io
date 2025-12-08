@@ -6,23 +6,19 @@ layout: post
 
 ### Key Features Of This App 
 
-###### Agentic Workflow:
-
+##### Agentic Workflow:
 This is a system where different AI "agents" work together like a team.
 
-###### Multiple Brains:
-
+##### Multiple Brains:
 This systems use different LLM models from OpenAI, Google, and others to make our agents smarter.
 
-###### Lots of Tools:
-
+##### Lots of Tools:
 The agents would use various tools, some powered by AI and others that are regular computer functions, like sending emails.
 
-###### Handoffs:
-
+##### Handoffs:
 The main agent can pass tasks to other specialized agents. It's like a manager delegating work to team members.
 
-###### Guardrails:
+##### Guardrails:
 We'll set up rules to control what our agents can say and do, making sure they don't make mistakes or say the wrong things.
 
 ### How It Works 
@@ -31,10 +27,13 @@ We'll set up rules to control what our agents can say and do, making sure they d
 
 **Planning Agent:** 
 This is the boss agent. It tells three "content writing" agents to create different versions of a sales email.
+
 **Choosing the Best Email:** 
 The planning agent looks at the three versions and picks the one it thinks is most likely to get a good response.
+
 **Handoff to Email Manager:** 
 The planning agent then hands off the chosen email to another agent called the "Email Manager."
+
 **Email Manager's Job:** 
 The Email Manager turns the email into a fancy HTML format, creates a catchy subject line, and sends it off to the customer.
 
