@@ -1,5 +1,5 @@
 ---
-title:  "CrewAI Framework Exploratory - Financial Analyst Agent"
+title:  "[Agentic Framework] CrewAI Exploratory - Financial Analyst Agent"
 layout: post
 ---
 
