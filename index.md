@@ -3,6 +3,11 @@ title:  "About Me"
 layout: page
 ---
 ## My Focus: Scaling AI for the Next Wave of Automation
+
+<script type="module" src="https://gradio.s3.us-west-2.amazonaws.com/gradio.js"></script>
+
+<gradio-app src="https://huggingface.co/spaces/Lsanchuan-m21/Chat_with_Paul+/" theme="light"></gradio-app>
+
 ![Coffee](https://user-images.githubusercontent.com/4943215/74586455-c8048300-4fe7-11ea-84ba-aa49f3abb014.jpeg)
 
 My professional journey has consistently placed me at the forefront of disruptive technological revolutions. From building foundational engineering systems to shaping corporate strategy with data, I have witnessed and driven massive-scale automation. Now, I am uniquely poised to ride the current AI wave, focusing my efforts on **scaling intelligent systems** to unlock their immense potential for enterprise-wide automation.
