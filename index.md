@@ -4,6 +4,8 @@ layout: page
 ---
 ## My Focus: Scaling AI for the Next Wave of Automation
 
+---
+###  Chat with my AI twin
 <script
 	type="module"
 	src="https://gradio.s3-us-west-2.amazonaws.com/6.0.2/gradio.js"
@@ -11,8 +13,7 @@ layout: page
 
 <gradio-app src="https://lsanchuan-m21-chat-with-paul.hf.space"></gradio-app>
 
-
-![Coffee](https://user-images.githubusercontent.com/4943215/74586455-c8048300-4fe7-11ea-84ba-aa49f3abb014.jpeg)
+---
 
 My professional journey has consistently placed me at the forefront of disruptive technological revolutions. From building foundational engineering systems to shaping corporate strategy with data, I have witnessed and driven massive-scale automation. Now, I am uniquely poised to ride the current AI wave, focusing my efforts on **scaling intelligent systems** to unlock their immense potential for enterprise-wide automation.
 
@@ -170,3 +171,5 @@ function foo () {
 3. Third item
     1. First nested item
     2. Second nested item
+
+![Coffee](https://user-images.githubusercontent.com/4943215/74586455-c8048300-4fe7-11ea-84ba-aa49f3abb014.jpeg)
