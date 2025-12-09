@@ -4,10 +4,13 @@ layout: page
 ---
 ## My Focus: Scaling AI for the Next Wave of Automation
 
-<script type="module" src="https://gradio.s3.us-west-2.amazonaws.com/gradio.js"></script>
+<script
+	type="module"
+	src="https://gradio.s3-us-west-2.amazonaws.com/6.0.2/gradio.js"
+></script>
 
 <gradio-app
-    src="https://huggingface.co/spaces/Lsanchuan-m21/Chat_with_Paul+/"
+    src="https://huggingface.co/spaces/Lsanchuan-m21/Chat_with_Paul"
     theme="light">
 </gradio-app>
 
