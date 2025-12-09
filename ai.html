@@ -9,6 +9,17 @@ layout: default
     <p>This section showcases my expertise in both advanced model development and production-grade deployment, 
       focusing on turning cutting-edge research into reliable, scalable applications.</p>
   </header>
+  <!DOCTYPE html>
+    <html>
+    <head>
+        <title>My Gradio App on GitHub Pages</title>
+        <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/gradio.js"></script>
+    </head>
+    <body>
+        <h1>Have a Chat with Digital Paul</h1>
+        <gradio-app src="https://huggingface.co/spaces/Lsanchuan-m21/Chat_with_Paul"></gradio-app>
+    </body>
+    </html>
   <nav class="smooth">
     {% assign reversed = site.aiposts | reverse %}
     {% for aipost in reversed %}
