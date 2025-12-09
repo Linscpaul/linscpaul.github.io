@@ -1,5 +1,5 @@
 ---
-title:  "[Agentic Framwork] OpenAI Agents SDK - Automated Sales App"
+title:  "[Agentic Framework] OpenAI Agents SDK - Automated Sales App"
 layout: post
 ---
 ## Building an Automated Sales Outreach App
