@@ -1,5 +1,5 @@
 ---
-title: "[Theory] LLM 101 - Key Concepts & Terminology"
+title: "[LLM Theory] LLM 101 - Key Concepts & Terminology"
 layout: post
 ---
 
