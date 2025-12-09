@@ -9,10 +9,8 @@ layout: page
 	src="https://gradio.s3-us-west-2.amazonaws.com/6.0.2/gradio.js"
 ></script>
 
-<gradio-app
-    src="https://huggingface.co/spaces/Lsanchuan-m21/Chat_with_Paul"
-    theme="light">
-</gradio-app>
+<gradio-app src="https://lsanchuan-m21-chat-with-paul.hf.space"></gradio-app>
+
 
 ![Coffee](https://user-images.githubusercontent.com/4943215/74586455-c8048300-4fe7-11ea-84ba-aa49f3abb014.jpeg)
 
