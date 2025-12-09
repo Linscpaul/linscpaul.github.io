@@ -11,7 +11,7 @@ layout: page
 	src="https://gradio.s3-us-west-2.amazonaws.com/6.0.2/gradio.js"
 ></script>
 
-<gradio-app src="https://lsanchuan-m21-chat-with-paul.hf.space"></gradio-app>
+<gradio-app src="https://lsanchuan-m21-chat-with-paul.hf.space" theme="dark"></gradio-app>
 
 ---
 
