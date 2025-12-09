@@ -1,10 +1,11 @@
 ---
-
+title:  "CrewAI Framework Exploratory - Financial Analyst Agent"
+layout: post
 ---
 
-## CrewAI Exploratory - Financial Analyst Agent
+## Building a Financial Analyst Agent App
 
-CrewAI offers several powerful tools:
+### CrewAI offers several powerful tools:
 
 *   **CrewAI Enterprise:** A multi-agent platform designed for deploying, running, and monitoring agentic AI solutions at scale.
 *   **CrewAI UI Studio:** A no-code/low-code product that simplifies the creation of multi-agent solutions through an intuitive visual interface.
