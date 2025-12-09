@@ -1,5 +1,5 @@
 ---
-title:  "No Framework - MyResume ChatBot"
+title:  "[Agentic Framework] No Framework - MyResume ChatBot"
 mathjax: true
 layout: post
 categories: media
