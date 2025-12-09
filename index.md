@@ -6,7 +6,10 @@ layout: page
 
 <script type="module" src="https://gradio.s3.us-west-2.amazonaws.com/gradio.js"></script>
 
-<gradio-app src="https://huggingface.co/spaces/Lsanchuan-m21/Chat_with_Paul+/" theme="light"></gradio-app>
+<gradio-app
+    src="https://huggingface.co/spaces/Lsanchuan-m21/Chat_with_Paul+/"
+    theme="light">
+</gradio-app>
 
 ![Coffee](https://user-images.githubusercontent.com/4943215/74586455-c8048300-4fe7-11ea-84ba-aa49f3abb014.jpeg)
 
