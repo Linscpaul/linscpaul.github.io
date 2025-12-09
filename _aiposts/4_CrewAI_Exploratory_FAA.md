@@ -34,7 +34,6 @@ Agents and Tasks can be dynamically created using code or configured via YAML fi
 
 **Example:**
 
-
 ```yaml
 Researcher:
   Role: >
@@ -50,7 +49,6 @@ The `crew.py` module contains the Crew definition, utilizing decorators such as 
 
 ### LLMs in CrewAI
 CrewAI offers seamless integration with almost any LLM through the LiteLLM library. Simply set your API keys in the `.env` file to get started.
-
 
 **Example:**
 ```python
@@ -91,7 +89,6 @@ researcher:
   information and present it in a clear and concise manner.
  llm: openai/gpt-4o-mini
 
-
 analyst:
  role: >
    Market Analyst and Report writer focused on {company}
@@ -105,7 +102,6 @@ analyst:
   those insights through well crafted reports.
  llm: openai/gpt-4o-mini
 ```
-
 
 **src -> config -> tasks.yaml**
 
@@ -121,14 +117,12 @@ research_task:
   4. Recent news and events
   5. Future outlook and potential developments
 
-
   Make sure to organize your findings in a structured format with clear sections.
  expected_output: >
    A comprehensive research document with well-organized sections covering
   all the requested aspects of {company}. Include specific facts, figures,
   and examples where relevant.
  agent: researcher
-
 
 analysis_task:
  description: >
@@ -149,7 +143,6 @@ analysis_task:
  output_file: output/report.md
 ```
 
-
 ### Step 3: Step 3: Complete the crew.py Module
 
 **src -> crew.py** 
@@ -163,35 +156,28 @@ from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 ​​from crewai_tools import SerperDevTool
 
-
 @CrewBase
 class ResearchCrew():
    """Research crew for comprehensive topic analysis and reporting"""
 
-
    agents: List[BaseAgent] #this is auto-configured by crewai
    tasks: List[Task] #this is auto-configured by crewai
 
-
-      @agent
+   @agent
    def researcher(self) -> Agent:
        return Agent(config=self.agents_config['researcher'], verbose=True, tools=[SerperDevTool()])
-
 
    @agent
    def analyst(self) -> Agent:
        return Agent(config=self.agents_config['analyst'],verbose=True)
 
-
    @task
    def research_task(self) -> Task:
        return Task(config=self.tasks_config['research_task'])
 
-
    @task
    def analysis_task(self) -> Task:
        return Task(config=self.tasks_config['analysis_task'])
-
 
    @crew
    def crew(self) -> Crew:
@@ -208,15 +194,13 @@ class ResearchCrew():
 
 **src -> main.py**
 
-Update the main.py file to define the inputs and execute the crew.
+Update the `main.py` file to define the inputs and execute the crew.
 
 ```python
 import os
 from financial_researcher.crew import ResearchCrew
 
-
 os.makedirs('output', exist_ok=True)
-
 
 def run():
    """
@@ -226,16 +210,11 @@ def run():
        'company': 'Apple'
    }
 
-
    result = ResearchCrew().crew().kickoff(inputs=inputs)
-
-
    print("\n\n=== FINAL REPORT ===\n\n")
    print(result.raw)
 
-
    print("\n\nReport has been saved to output/report.md")
-
 
 if __name__ == "__main__":
    run()
