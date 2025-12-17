@@ -215,4 +215,174 @@ Vector DB / Retriever
 
 ## Analogy 🧠
 **Chunk = edited article with title and abstract**
- **Result = indexed library entry**
+**Result = indexed library entry**
+
+
+## Step 2 - Fetch Document from Knowledge Base in the Local Folders
+
+``` python
+def fetch_documents():
+   """customized version of the LangChain Directory Loader"""
+
+   documents = []
+
+   for folder in KNOWLEDGE_BASE_PATH.iterdir():
+       doc_type=folder.name
+       for file in folder.rglob("*.md"):
+           with open(file, "r", encoding = "utf-8") as f:
+               documents.append({"type": doc_type, "source": file.as_posix(), "text": f.read()})
+   print (f"Loaded {len(documents)} documents")
+   return documents
+
+documents = fetch_documents()
+```
+
+`fetch_documents` is a customized function that mimics what LangChain DirectoryLoader does, but with:
+
+* custom metadata
+* a simpler data structure
+* full control over folder logic
+
+## Initialize the result container
+```python
+documents = []
+```
+* An empty Python list
+* Will hold **one dictionary per document**
+* Each dictionary represents a document + metadata
+
+---
+
+## Iterate over top-level folders
+```python
+for folder in KNOWLEDGE_BASE_PATH.iterdir():
+```
+**What this means**
+* `KNOWLEDGE_BASE_PATH` is a `Path` object (from pathlib)
+* `.iterdir()` lists **immediate subfolders/files**
+
+Example directory structure:
+```python
+knowledge-base/
+├── company/
+├── contracts/
+├── employees/
+└── products/
+```
+Each `folder` represents:
+* company
+* contracts
+* employees
+* products
+
+---
+
+## Capture document type from folder name
+```python
+doc_type = folder.name
+```
+If the folder is:
+< knowledge-base/contracts/
+
+Then:
+```python
+doc_type == "contracts"
+```
+This is used as **metadata** later.
+
+---
+
+## Recursively find Markdown files
+```python
+for file in folder.rglob("*.md"):
+```
+* `.rglob("*.md")` means:
+
+<  “Find all `.md` files recursively inside this folder”
+
+So it will find:
+* `contracts/nda.md`
+* `contracts/legal/nda_2023.md`
+etc.
+
+---
+
+## Open each file safely
+```python
+with open(file, "r", encoding="utf-8") as f:
+```
+* Opens the file in **read mode** -> `“r”`
+* Uses UTF-8 encoding
+* with ensures the file closes automatically
+
+---
+
+## Read file contents and append metadata
+```python
+documents.append({
+    "type": doc_type,
+    "source": file.as_posix(),
+    "text": f.read()
+})
+```
+This appends a `dictionary` with:
+**🔹 type**
+```python
+"type": doc_type
+```
+* Category of document
+* Example: `"contracts"`
+
+**🔹 source**
+```python
+"source": file.as_posix()
+```
+* Full file path as a string
+
+Example:
+<  knowledge-base/contracts/nda_2023.md
+
+**🔹 text**
+```python
+"text": f.read()
+```
+* Entire file contents as a string
+* This is what will later be:
+   - chunked
+   - embedded
+   - searched
+
+---
+
+## Print a summary
+```python
+print(f"Loaded {len(documents)} documents")
+```
+* Uses an f-string
+* Reports how many files were loaded
+* Helpful for debugging
+
+---
+
+## Return the documents
+```python
+return documents
+```
+* Returns a list of dictionaries
+* Each element looks like:
+
+```python
+{
+    "type": "contracts",
+    "source": "knowledge-base/contracts/nda_2023.md",
+    "text": "Full markdown content here..."
+}
+```
+---
+
+## Call the function
+```python
+documents = fetch_documents()
+```
+* Executes the function
+* Stores the result in `documents`
