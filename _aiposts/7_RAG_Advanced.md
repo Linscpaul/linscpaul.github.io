@@ -24,12 +24,12 @@ class Chunks(BaseModel):
    chunks: list[Chunk]
 ```
 
-## Big picture (what this code is doing)
+## What this code is doing - Big picture
 This code defines three data models:
-Chunk — a structured representation of a document chunk
-Result — a retrieval-ready document (text + metadata)
-Chunks — a container holding multiple Chunk objects
-It also defines a conversion method (as_result) that turns a Chunk into a retrievable document.
+* `Chunk` — a structured representation of a document chunk.
+* `Result` — a retrieval-ready document (text + metadata).
+*`Chunks` — a container holding multiple Chunk objects.
+It also defines a conversion method `as_result` that turns a Chunk into a retrievable document.
 
 ---
 
@@ -45,7 +45,7 @@ This mirrors the LangChain Document structure:
 * `metadata`: structured info about the source
 Think of this as:
 “A finalized document ready for retrieval or display.”
-—
+
 ### Why this exists
 * Standardizes output format
 * Makes sure every result has:
@@ -103,7 +103,7 @@ original_text: str = Field(
     description="The original text of this chunk from the provided document, exactly as is, not changed in any way"
 )
 ```
-* The verbatim source text
+* The verbatim source text.
 * Important for:
 
   - factual grounding
@@ -163,7 +163,6 @@ class Chunks(BaseModel):
 ```
 ### What this represents
 * A wrapper containing multiple `Chunk` objects
-
 * Often used for:
 
   - structured LLM output
