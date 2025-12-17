@@ -6,12 +6,13 @@ layout: post
 
 ## Overview
 This project features a high-performance RAG pipeline built from the ground up without high-level frameworks like LangChain or LlamaIndex. By "mimicking" these frameworks through custom logic, this implementation provides full control over every component, allowing for precise performance fine-tuning and the application of advanced optimization techniques.
+
 ## Core Pipeline Architecture
-* Standardized Output: Implemented `Pydantic` classes to enforce schema validation and ensure consistent data flow across the pipeline.
-* Document Ingestion: Developed custom connectors to fetch and process documents from local knowledge bases.
-* LLM-Powered Chunking: Leveraged a "Parser LLM" to transform raw text into structured, semantically coherent objects defined by the Pydantic schema.
-* Vector Storage: Integrated an encoder model to transform chunks into embeddings, stored in a local vector database for high-dimensional retrieval.
-* Performance Evaluation: Built an automated evaluation loop that benchmarks generated responses against a curated dataset of `test_questions` and `test_answers`.
+* **Standardized Output:** Implemented `Pydantic` classes to enforce schema validation and ensure consistent data flow across the pipeline.
+* **Document Ingestion:** Developed custom connectors to fetch and process documents from local knowledge bases.
+* **LLM-Powered Chunking:** Leveraged a "Parser LLM" to transform raw text into structured, semantically coherent objects defined by the Pydantic schema.
+* **Vector Storage:** Integrated an encoder model to transform chunks into embeddings, stored in a local vector database for high-dimensional retrieval.
+* **Performance Evaluation:** Built an automated evaluation loop that benchmarks generated responses against a curated dataset of `test_questions` and `test_answers`.
 
 ## Advanced RAG Optimization Techniques
 This implementation serves as a sandbox for R&D across the following advanced RAG strategies:
@@ -26,7 +27,6 @@ This implementation serves as a sandbox for R&D across the following advanced RA
 * **GraphRAG Integration:** Connecting retrieved documents via a knowledge graph to surface contextually related nodes.
 * **Agentic RAG:** Orchestrating the pipeline with autonomous agents capable of using tools (e.g., SQL) and long-term memory.
 
----
 ---
 
 ## Step 1 - Create Pydantic Class for Standard Output Format
@@ -56,7 +56,6 @@ This code defines three data models:
 *`Chunks` — a container holding multiple Chunk objects.
 It also defines a conversion method `as_result` that turns a Chunk into a retrievable document.
 
----
 
 ## class Result(BaseModel)
 ```python
@@ -78,7 +77,6 @@ Think of this as:
   - metadata
 * Easier validation and serialization
 
----
 
 ## class Chunk(BaseModel)
 ```python
@@ -102,7 +100,6 @@ headline: str = Field(
 Example:
 < "Sales Department Overview"
 
----
 
 ### Field 2: summary
 ```python
@@ -120,7 +117,6 @@ summary: str = Field(
 Example:
 < "Alice Johnson leads enterprise sales and manages key accounts."
 
----
 
 ### Field 3: `original_text`
 ```python
@@ -135,7 +131,6 @@ original_text: str = Field(
   - citations
   - audits
 
----
 
 ## The method: as_result
 ```python
@@ -145,7 +140,6 @@ This is an instance method of `Chunk`.
 * `self` → the current chunk
 * `document` → metadata about the source document
 
----
 
 ### Metadata creation
 ```python
@@ -189,7 +183,6 @@ Why this works well:
 * Summary boosts semantic recall
 * Original text ensures accuracy
 
----
 
 ## class Chunks(BaseModel)
 ```python
@@ -209,7 +202,6 @@ Example:
     chunks=[Chunk(...), Chunk(...)]
 )
 
----
 
 ## Why use BaseModel (Pydantic)?
 Using Pydantic gives you:
@@ -223,7 +215,6 @@ This is especially useful when:
 * You need predictable structure
 * You later convert chunks into vector documents
 
----
 
 ## How these classes work together (flow)
 ```python
@@ -236,12 +227,12 @@ Result (page_content + metadata)
 Vector DB / Retriever
 ```
 
----
 
 ## Analogy 🧠
 **Chunk = edited article with title and abstract**
 **Result = indexed library entry**
 
+---
 
 ## Step 2 - Fetch Document from Knowledge Base in the Local Folders
 
