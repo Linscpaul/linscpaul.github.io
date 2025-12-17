@@ -442,7 +442,7 @@ Respond with the chunks.
 
 ## What this code is doing - Big picture
 **This pipeline:**
-1. Takes raw documents (text + metadata)
+1. Takes raw documents (text + metadata) from step 2
 2. Asks an LLM to **split each document into chunks**
 3. Parses the LLM’s structured response
 4. Converts each chunk into a retrieval-ready object
