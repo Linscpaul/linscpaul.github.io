@@ -4,7 +4,7 @@ layout: post
 ---
 [last updated: 18 Dec 2025]
 
-## Overview
+## OVERVIEW
 This project features a high-performance RAG pipeline built from the ground up without high-level frameworks like LangChain or LlamaIndex. By "mimicking" these frameworks through custom logic, this implementation provides full control over every component, allowing for precise performance fine-tuning and the application of advanced optimization techniques.
 
 ## Core Pipeline Architecture
@@ -29,7 +29,7 @@ This implementation serves as a sandbox for R&D across the following advanced RA
 
 ---
 
-## Step 1 - Create Pydantic Class for Standard Output Format
+## STEP 1 - Create Pydantic Class for Standard Output Format
 
 ``` python
 class Result(BaseModel):
@@ -98,7 +98,7 @@ headline: str = Field(
   - summarization
 
 Example:
-< "Sales Department Overview"
+> "Sales Department Overview"
 
 
 ### Field 2: summary
@@ -115,7 +115,7 @@ summary: str = Field(
   - context quality
 
 Example:
-< "Alice Johnson leads enterprise sales and manages key accounts."
+> "Alice Johnson leads enterprise sales and manages key accounts."
 
 
 ### Field 3: `original_text`
@@ -173,9 +173,7 @@ Attach metadata
 Creates a `retrieval-ready text block`:
 ```python
 <headline>
-
 <summary>
-
 <original_text>
 ```
 Why this works well:
@@ -198,9 +196,11 @@ class Chunks(BaseModel):
   - validation
 
 Example:
-< Chunks(
+```python
+Chunks(
     chunks=[Chunk(...), Chunk(...)]
 )
+```
 
 
 ## Why use BaseModel (Pydantic)?
@@ -234,7 +234,7 @@ Vector DB / Retriever
 
 ---
 
-## Step 2 - Fetch Document from Knowledge Base in the Local Folders
+## STEP 2 - Fetch Document from Knowledge Base in the Local Folders
 
 ``` python
 def fetch_documents():
