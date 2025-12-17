@@ -189,11 +189,13 @@ class Chunks(BaseModel):
 ```
 ### What this represents
 * A wrapper containing multiple `Chunk` objects
+* `Chunks` is a Pydantic model that says:
+   - “Valid JSON must contain a key called `chunks`, whose value is a list of `Chunk` objects.”
 * Often used for:
 
-  - structured LLM output
-  - batch processing
-  - validation
+   - structured LLM output
+   - batch processing
+   - validation
 
 Example:
 ```python
