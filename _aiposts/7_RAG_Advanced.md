@@ -1,8 +1,33 @@
 ---
-title:  "[RAG Advanced] Building RAG From Scratch and Advanced Techniques"
+title:  "[RAG Advanced] Building a Custom RAG Pipeline for Granular Performance Tuning"
 layout: post
 ---
 [last updated: 18 Dec 2025]
+
+## Overview
+This project features a high-performance RAG pipeline built from the ground up without high-level frameworks like LangChain or LlamaIndex. By "mimicking" these frameworks through custom logic, this implementation provides full control over every component, allowing for precise performance fine-tuning and the application of advanced optimization techniques.
+## Core Pipeline Architecture
+* Standardized Output: Implemented `Pydantic` classes to enforce schema validation and ensure consistent data flow across the pipeline.
+* Document Ingestion: Developed custom connectors to fetch and process documents from local knowledge bases.
+* LLM-Powered Chunking: Leveraged a "Parser LLM" to transform raw text into structured, semantically coherent objects defined by the Pydantic schema.
+* Vector Storage: Integrated an encoder model to transform chunks into embeddings, stored in a local vector database for high-dimensional retrieval.
+* Performance Evaluation: Built an automated evaluation loop that benchmarks generated responses against a curated dataset of `test_questions` and `test_answers`.
+
+## Advanced RAG Optimization Techniques
+This implementation serves as a sandbox for R&D across the following advanced RAG strategies:
+* **Semantic Chunking:** Moving beyond fixed-size windows to chunk data based on thematic shifts.
+* **Encoder R&D:** Benchmarking various embedding models to find the optimal balance between latency and retrieval accuracy.
+* **Context Engineering:** Refining prompts to include dynamic variables like current date, metadata, and conversation history.
+* **LLM-Driven Pre-processing:** Using a separate LLM to clean and summarize text specifically for the encoding phase.
+* **Query Rewriting:** Translating ambiguous user queries into optimized search terms for better vector matching.
+* **Multi-Query Expansion:** Generating multiple search perspectives from a single prompt to increase retrieval recall.
+* **LLM Re-ranking:** Applying a "Cross-Encoder" approach to filter and prioritize the most relevant results from initial retrieval.
+* **Hierarchical Retrieval:** Navigating a parent-child document structure (summaries first, deep-dives second).
+* **GraphRAG Integration:** Connecting retrieved documents via a knowledge graph to surface contextually related nodes.
+* **Agentic RAG:** Orchestrating the pipeline with autonomous agents capable of using tools (e.g., SQL) and long-term memory.
+
+---
+---
 
 ## Step 1 - Create Pydantic Class for Standard Output Format
 
