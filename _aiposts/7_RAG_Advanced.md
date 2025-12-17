@@ -10,8 +10,8 @@ This project features a high-performance RAG pipeline built from the ground up w
 ## Core Pipeline Architecture
 * **Standardized Output:** Implemented `Pydantic` classes to enforce schema validation and ensure consistent data flow across the pipeline.
 * **Document Ingestion:** Developed custom connectors to fetch and process documents from local knowledge bases.
-* **LLM-Powered Chunking:** Leveraged a "Parser LLM" to transform raw text into structured, semantically coherent objects defined by the Pydantic schema.
-* **Vector Storage:** Integrated an encoder LLM to transform chunks into embeddings, stored in a local vector database for high-dimensional retrieval.
+* **LLM-Powered Chunking:** Leveraged a `"Parser LLM"` to transform raw text into structured, semantically coherent objects defined by the Pydantic schema.
+* **Vector Storage:** Integrated an `Encoder LLM` to transform chunks into embeddings, stored in a local vector database for high-dimensional retrieval.
 * **Performance Evaluation:** Built an automated evaluation loop that benchmarks generated responses against a curated dataset of `test_questions` and `test_answers`.
 
 ## Advanced RAG Optimization Techniques
