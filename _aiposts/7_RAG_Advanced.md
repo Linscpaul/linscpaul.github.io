@@ -7,12 +7,12 @@ layout: post
 ## OVERVIEW
 This project features a high-performance RAG pipeline built from the ground up without high-level frameworks like LangChain or LlamaIndex. By "mimicking" these frameworks through custom logic, this implementation provides full control over every component, allowing for precise performance fine-tuning and the application of advanced optimization techniques.
 
-## Core Pipeline Architecture
+## Core Pipeline Architecture - Key Steps
 * **Standardized Output:** Implemented `Pydantic` classes to enforce schema validation and ensure consistent data flow across the pipeline.
 * **Document Ingestion:** Developed custom connectors to fetch and process documents from local knowledge bases.
 * **LLM-Powered Chunking:** Leveraged a `"Parser LLM"` to transform raw text into structured, semantically coherent objects defined by the Pydantic schema.
 * **Vector Storage:** Integrated an `Encoder LLM` to transform chunks into embeddings, stored in a local vector database for high-dimensional retrieval.
-* **Performance Evaluation:** Built an automated evaluation loop that benchmarks generated responses against a curated dataset of `test_questions` and `test_answers`.
+* **Performance Evaluation:** Built an automated evaluation loop that benchmarks generated responses against a curated dataset of `test_questions` and `test_answers`. (Evaluation is illusrated in a seperate post)
 
 ## Advanced RAG Optimization Techniques
 This implementation serves as a sandbox for R&D across the following advanced RAG strategies:
@@ -308,7 +308,6 @@ doc_type == "contracts"
 ```
 This is used as **metadata** later.
 
----
 
 ## Recursively find Markdown files
 ```python
@@ -323,7 +322,6 @@ So it will find:
 * `contracts/legal/nda_2023.md`
 etc.
 
----
 
 ## Open each file safely
 ```python
@@ -333,7 +331,6 @@ with open(file, "r", encoding="utf-8") as f:
 * Uses UTF-8 encoding
 * with ensures the file closes automatically
 
----
 
 ## Read file contents and append metadata
 ```python
@@ -370,7 +367,6 @@ Example:
    - embedded
    - searched
 
----
 
 ## Print a summary
 ```python
@@ -380,7 +376,6 @@ print(f"Loaded {len(documents)} documents")
 * Reports how many files were loaded
 * Helpful for debugging
 
----
 
 ## Return the documents
 ```python
@@ -396,7 +391,7 @@ return documents
     "text": "Full markdown content here..."
 }
 ```
----
+
 
 ## Call the function
 ```python
@@ -404,3 +399,268 @@ documents = fetch_documents()
 ```
 * Executes the function
 * Stores the result in `documents`
+
+---
+
+## STEP 3 - Implement a classic LLM-assisted chunking pipeline
+
+```python
+chunks = create_chunks(documents)
+
+def create_chunks(documents):
+   chunks = []
+   for doc in tqdm(documents):
+       chunks.extend(process_document(doc))
+   return chunks
+
+def process_document(document):
+   messages = make_messages(document)
+   response = completion(model=MODEL, messages=messages, response_format=Chunks)
+   reply = response.choices[0].message.content
+   doc_as_chunks = Chunks.model_validate_json(reply).chunks
+   return [chunk.as_result(document) for chunk in doc_as_chunks]
+  
+def make_messages(document):
+   return [
+       {"role":"user", "content": make_prompt(document)}
+   ]
+
+
+def make_prompt(document):
+   how_many = (len(document["text"]) // AVERAGE_CHUNK_SIZE) + 1
+   return f"""
+You make a document and you split the document into overlapping chunks for a KnowledgeBase.
+The document is of type: {document["type"]}
+The document has been retrieved from: {document["source"]}
+This document should probably be split into {how_many} chunks, but you can have more or less as appropriate.
+Here is the document:
+{document["text"]}
+Respond with the chunks.
+"""
+```
+
+## Big-picture overview
+**This pipeline:**
+* 1. Takes raw documents (text + metadata)
+* 2. Asks an LLM to **split each document into chunks**
+* 3. Parses the LLM’s structured response
+* 4. Converts each chunk into a retrieval-ready object
+
+**Flow:**
+```python
+documents
+  ↓
+create_chunks
+  ↓
+process_document (per document)
+  ↓
+LLM (structured output)
+  ↓
+Chunk objects
+  ↓
+Result objects
+```
+
+## Entry point
+```python
+chunks = create_chunks(documents)
+```
+
+`documents` is a list of dicts like:
+```python
+ {
+    "type": "contracts",
+    "source": "knowledge-base/contracts/nda.md",
+    "text": "Full document text..."
+}
+```
+* `chunks` will become a **flat list of chunked results** across all documents.
+
+
+## create_chunks(documents)
+```python
+def create_chunks(documents):
+    chunks = []
+    for doc in tqdm(documents):
+        chunks.extend(process_document(doc))
+    return chunks
+```
+### What’s happening
+* `chunks = []`
+   - Initialize the final output list
+
+* `for doc in tqdm(documents):`
+   - Loop over every document
+   -`tqdm` adds a **progress bar** (purely visual)
+
+* `chunks.extend(process_document(doc))`
+   - `process_document(doc)` returns a **list of chunks**
+
+`.extend()` flattens them into one list
+
+⚠️ Why `extend` and not `append`?
+* `append` → list of lists ❌
+* `extend` → one flat list ✅
+
+
+## process_document(document)
+```python
+def process_document(document):
+    messages = make_messages(document)
+    response = completion(
+        model=MODEL,
+        messages=messages,
+        response_format=Chunks
+    )
+    reply = response.choices[0].message.content
+    doc_as_chunks = Chunks.model_validate_json(reply).chunks
+    return [chunk.as_result(document) for chunk in doc_as_chunks]
+```
+
+### Step 3.1: Build messages
+```python
+messages = make_messages(document)
+```
+This prepares the prompt sent to the LLM.
+
+
+## make_messages(document)
+```python
+def make_messages(document):
+    return [
+        {"role": "user", "content": make_prompt(document)}
+    ]
+```
+* Returns a **Chat API–compatible message list**
+* Only a `user` message (no system prompt here)
+* The content is generated by `make_prompt`
+
+
+## make_prompt(document)
+```python
+def make_prompt(document):
+    how_many = (len(document["text"]) // AVERAGE_CHUNK_SIZE) + 1
+    return f"""
+You make a document and you split the document into overlapping chunks for a KnowledgeBase.
+The document is of type: {document["type"]}
+The document has been retrieved from: {document["source"]}
+This document should probably be split into {how_many} chunks, but you can have more or less as appropriate.
+Here is the document:
+{document["text"]}
+Respond with the chunks.
+"""
+```
+
+### What this does
+Calculates an **approximate chunk count**
+```python
+ how_many = text_length // average_chunk_size + 1
+```
+* This is **guidance**, not a hard rule
+* Provides:
+   - document type
+   - source
+   - full text
+
+* Instructs the LLM to return chunks
+
+This is **prompt-engineered chunking**, not mechanical chunking.
+
+
+## Call the LLM
+```python
+response = completion(
+    model=MODEL,
+    messages=messages,
+    response_format=Chunks
+)
+```
+### Key points
+* `completion(...)` calls the LLM
+* `response_format=Chunks` tells the LLM:
+
+< “Return JSON that matches the Chunks Pydantic model”
+
+So the model is expected to output something like:
+```python
+{
+  "chunks": [
+    {
+      "headline": "...",
+      "summary": "...",
+      "original_text": "..."
+    }
+  ]
+}
+```
+
+
+## Extract the model’s reply
+```python
+reply = response.choices[0].message.content
+```
+* Standard ChatCompletion structure
+* `reply` is a **JSON string**
+
+
+## Validate and parse structured output
+```python
+doc_as_chunks = Chunks.model_validate_json(reply).chunks
+```
+### What happens here
+1. `model_validate_json(reply)`
+
+   - Parses JSON
+   - Validates it against the `Chunks` schema
+   - Raises errors if malformed
+
+2. `.chunks`
+   - Extracts the list of `Chunk` objects
+
+
+Now you have:
+```python
+List[Chunk]
+```
+Each `Chunk` has:
+* `headline`
+* `summary`
+* `original_text`
+
+
+## Convert chunks into retrieval-ready results
+```python
+return [chunk.as_result(document) for chunk in doc_as_chunks]
+```
+This uses the method you defined earlier:
+`chunk.as_result(document)`
+
+Which:
+* Combines headline + summary + original text
+* Adds metadata `(source, type)`
+* Produces a `Result` object
+Final output of `process_document`:
+`List[Result]`
+
+
+## Final result of the whole pipeline
+```python
+chunks = create_chunks(documents)
+```
+Now:
+`chunks == List[Result]`
+
+Each `Result` looks like:
+```python
+Result(
+    page_content="Headline\n\nSummary\n\nOriginal text",
+    metadata={
+        "source": "...",
+        "type": "contracts"
+    }
+)
+```
+These are ready for:
+* embedding
+* vector storage
+* retrieval
