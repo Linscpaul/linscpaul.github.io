@@ -406,6 +406,10 @@ documents = fetch_documents()
 ## STEP 3 - Implement a classic LLM-assisted chunking pipeline
 
 ```python
+MODEL = "gpt-4o-mini"
+KNOWLEDGE_BASE_PATH = Path("knowledge-base")
+AVERAGE_CHUNK_SIZE = 500
+
 chunks = create_chunks(documents)
 
 def create_chunks(documents):
