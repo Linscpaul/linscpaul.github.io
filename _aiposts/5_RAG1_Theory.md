@@ -3,12 +3,15 @@ title:  "[RAG Theory] Key Concepts of Retrieval Augmented Generation"
 layout: post
 ---
 [last updated: 17 Dec 2025]
-## Why Is the Concept of RAG Important?
+## Why is the Concept of RAG Important?
 
-* The concept of RAG helps AI **“look things up properly” before it speaks**.
+### The concept of RAG helps AI **“look things up properly” before it speaks**.
+
 * Without the RAG process, AI relies only on its internal memory and educated guessing.
 * With the RAG process, AI can use real and relevant information at the right time.
-* RAG (Retrieval-Augmented Generation) is crucial in real-world AI systems because AI models do not always “know” everything. Their knowledge is limited to what they were trained on, and they may not have access to the most up-to-date or domain-specific information.
+
+RAG (Retrieval-Augmented Generation) is crucial in real-world AI systems because AI models do not always “know” everything. Their knowledge is limited to what they were trained on, and they may not have access to the most up-to-date or domain-specific information.
+
 * It is important to emphasize the **concept of RAG**, rather than RAG as a specific technology. RAG is often associated with vector databases, but in practice, **not all organizations use vector databases**.
 
 ---
