@@ -133,6 +133,16 @@ Extracts selected metadata fields:
 * Where the chunk came from
 * What kind of document it is
 
+Example of `metadata’
+``` python
+metadata = {
+    "source": "contracts/nda_2023.pdf",
+    "type": "contracts",
+    "page": 4,
+    "chunk_index": 2
+}
+```
+
 ### Combine text fields
 ``` python
 return Result(
