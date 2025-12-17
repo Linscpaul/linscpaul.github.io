@@ -53,7 +53,7 @@ class Chunks(BaseModel):
 This code defines three data models:
 * `Chunk` — a structured representation of a document chunk.
 * `Result` — a retrieval-ready document (text + metadata).
-*`Chunks` — a container holding multiple Chunk objects.
+* `Chunks` — a container holding multiple Chunk objects.
 It also defines a conversion method `as_result` that turns a Chunk into a retrievable document.
 
 
@@ -255,7 +255,8 @@ def fetch_documents():
 documents = fetch_documents()
 ```
 
-`fetch_documents` is a customized function that mimics what LangChain DirectoryLoader does, but with:
+## What this code is doing - Big picture
+`fetch_documents` is a customized function that mimics what LangChain DirectoryLoader does, which is to load the document in the local drives, but with:
 
 * custom metadata
 * a simpler data structure
@@ -439,12 +440,12 @@ Respond with the chunks.
 """
 ```
 
-## Big-picture overview
+## What this code is doing - Big picture
 **This pipeline:**
-* 1. Takes raw documents (text + metadata)
-* 2. Asks an LLM to **split each document into chunks**
-* 3. Parses the LLM’s structured response
-* 4. Converts each chunk into a retrieval-ready object
+1. Takes raw documents (text + metadata)
+2. Asks an LLM to **split each document into chunks**
+3. Parses the LLM’s structured response
+4. Converts each chunk into a retrieval-ready object
 
 **Flow:**
 ```python
