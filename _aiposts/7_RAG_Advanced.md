@@ -669,3 +669,217 @@ These are ready for:
 * embedding
 * vector storage
 * retrieval
+
+---
+
+## STEP 4 - Create Vector Storage for Semantic Search
+
+``` python
+DB_NAME = "preprocessed_db"
+collection_name = "docs"
+embedding_model = "text-embedding-3-large"
+
+create_embeddings(chunks)
+
+def create_embeddings(chunks):
+   chroma = PersistentClient(path=DB_NAME)
+   if collection_name in [c.name for c in chroma.list_collections()]:
+       chroma.delete_collection(collection_name)
+
+   texts = [chunk.page_content for chunk in chunks]
+   emb = openai.embeddings.create(model=embedding_model, input=texts).data
+   vectors = [e.embedding for e in emb]
+
+   collection = chroma.get_or_create_collection(collection_name)
+
+   ids = [str(i) for i in range(len(chunks))]
+   metas = [chunk.metadata for chunk in chunks]
+
+   collection.add(ids = ids, embeddings=vectors, documents=texts, metadatas=metas)
+   print(f"Vectorstore created with {collection.count()} documents")
+```
+
+## Big-picture overview
+This code:
+1. Embeds your chunks
+2. Stores them in Chroma
+3. Attaches metadata
+4. Persists everything to disk
+
+It is the foundation of semantic search and RAG
+
+Flow:
+```python
+chunks (Result objects)
+   ↓
+text embeddings (numeric vectors)
+   ↓
+Chroma collection on disk
+```
+After this runs, you have a persistent vector database ready for semantic search.
+
+
+## Configuration variables
+```python
+DB_NAME = "preprocessed_db"
+collection_name = "docs"
+embedding_model = "text-embedding-3-large"
+```
+### What these mean
+* `DB_NAME`
+   - Folder on disk where Chroma stores vectors
+   - Will be created if it doesn’t exist
+
+* `collection_name`
+   - Logical name for a group of vectors
+   - Similar to a table name in a database
+
+* `embedding_model`
+   - Name of the OpenAI embedding model
+   - Produces high-dimensional vectors (3,072 dims)
+
+
+## Entry point
+```python
+create_embeddings(chunks)
+```
+* `chunks` is a `List[Result]`
+* Each `Result` has:
+   - `page_content` (text)
+   - `metadata` (dict)
+
+
+## Create or connect to Chroma
+```python
+chroma = PersistentClient(path=DB_NAME)
+```
+* Creates a **persistent Chroma client**
+* Vectors are stored on disk, not just in memory
+* You can reload them later
+
+
+## Remove old collection (optional reset)
+```python
+if collection_name in [c.name for c in chroma.list_collections()]:
+    chroma.delete_collection(collection_name)
+```
+### What this does
+* Lists all existing collections
+* If `"docs"` already exists:
+   - Deletes it
+   - Starts fresh
+
+⚠️ This **destroys old embeddings** — useful during development, risky in production.
+
+
+## Extract text from chunks
+```python
+texts = [chunk.page_content for chunk in chunks]
+```
+* List comprehension
+* Produces:
+
+
+- `List[str]`
+
+Each string is what gets embedded.
+
+
+## Call OpenAI Embeddings API
+```python
+emb = openai.embeddings.create(
+    model=embedding_model,
+    input=texts
+).data
+```
+### What happens
+* Sends all texts to OpenAI
+* OpenAI returns one embedding per text
+* `emb` is a list of objects like:
+```python
+{
+    "embedding": [0.012, -0.456, ...],
+    "index": 0
+}
+```
+
+
+## Extract raw vectors
+```python
+vectors = [e.embedding for e in emb]
+```
+Now you have:
+`List[List[float]]`
+One vector per chunk.
+
+
+## Create or get a collection
+```python
+collection = chroma.get_or_create_collection(collection_name)
+```
+* Creates `"docs"` if missing
+
+
+*Otherwise reuses it
+
+
+## Generate document IDs
+```python
+ids = [str(i) for i in range(len(chunks))]
+```
+* Chroma requires **string IDs**
+* One ID per vector
+
+Example:
+> ["0", "1", "2", ...]
+
+
+## Extract metadata
+```python
+metas = [chunk.metadata for chunk in chunks]
+```
+Produces:
+`List[dict]`
+Metadata is stored **alongside** vectors but **not embedded**.
+
+## Add everything to Chroma
+```python
+collection.add(
+    ids=ids,
+    embeddings=vectors,
+    documents=texts,
+    metadatas=metas
+)
+```
+### What gets stored
+| Field          | Purpose                | 
+|----------------|------------------------|
+| ids            | unique identifier      | 
+| embeddings     | numeric vectors        | 
+| documents      | original text          |
+| metadatas      | filtering & provenance |
+
+This is the **moment your vector database is created.**
+
+## Print confirmation
+```python
+print(f"Vectorstore created with {collection.count()} documents")
+```
+* Confirms how many vectors were stored
+* Useful sanity check
+
+
+## Behind the scenes (important)
+After this completes:
+* Embeddings are persisted to disk
+* You can reload them later with:
+
+```python
+chroma = PersistentClient(path=DB_NAME)
+collection = chroma.get_collection("docs")
+```
+No re-embedding needed.
+
+
+
+
