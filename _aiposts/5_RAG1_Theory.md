@@ -11,16 +11,18 @@ layout: post
 * RAG (Retrieval-Augmented Generation) is crucial in real-world AI systems because AI models do not always “know” everything. Their knowledge is limited to what they were trained on, and they may not have access to the most up-to-date or domain-specific information.
 * It is important to emphasize the **concept of RAG**, rather than RAG as a specific technology. RAG is often associated with vector databases, but in practice, **not all organizations use vector databases**.
 
-#### The RAG process is useful with many types of data sources, including:
+---
+
+### The RAG process is useful with many types of data sources, including:
 * Vector databases for unstructured text
 * Conventional databases such as **SQL**, which store structured data
 * Search engines, APIs, and knowledge bases
 
-#### Regardless of the storage technology, the key idea remains the same:
+### Regardless of the storage technology, the key idea remains the same:
 **retrieve relevant information first, then use it to generate a better answer.**
 This makes AI systems more accurate, reliable, and suitable for real-world use.
 
-#### Here’s how it usually works:
+### Here’s how it usually works:
 In many production systems, an AI agent is used to look up information from a database before answering a question.
 * A user asks a question.
 * The AI agent first tries to understand the meaning of the question.
@@ -45,7 +47,9 @@ RAG helps reduce these problems by:
 * Providing the AI with **fresh, relevant, and accurate information**.
 * Reducing the chance of the AI “guessing” or hallucinating
 * Making answers **more reliable and trustworthy**.
+
 However, RAG only works well if the **search process is well designed**.
+
 That is why **LLM engineers** must constantly improve:
 * How the AI understands questions
 * How it searches for relevant information
