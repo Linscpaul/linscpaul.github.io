@@ -852,12 +852,12 @@ collection.add(
 )
 ```
 ### What gets stored
-| Field          | Purpose                 | 
-|----------------|-------------------------|
-| ids            | unique identifier       | 
-| embeddings     | numeric vectors         | 
-| documents      | original text           |
-| metadatas      | filtering & provenance  |
+| Field                   | Purpose                 | 
+|-------------------------|-------------------------|
+| ids                     | unique identifier       | 
+| embeddings              | numeric vectors         | 
+| documents               | original text           |
+| metadatas               | filtering & provenance  |
 
 This is the **moment your vector database is created.**
 
