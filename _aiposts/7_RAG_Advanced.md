@@ -852,12 +852,12 @@ collection.add(
 )
 ```
 ### What gets stored
-| Field          | Purpose                | 
-|----------------|------------------------|
-| ids            | unique identifier      | 
-| embeddings     | numeric vectors        | 
-| documents      | original text          |
-| metadatas      | filtering & provenance |
+| Field          | Purpose                 | 
+|----------------|-------------------------|
+| ids            | unique identifier       | 
+| embeddings     | numeric vectors         | 
+| documents      | original text           |
+| metadatas      | filtering & provenance  |
 
 This is the **moment your vector database is created.**
 
@@ -880,6 +880,22 @@ collection = chroma.get_collection("docs")
 ```
 No re-embedding needed.
 
+---
 
+### Mental model 🧠
+Chunks → Numbers → Stored Geometry
+
+### Final takeaway
+This code:
+
+Embeds your chunks
+
+Stores them in Chroma
+
+Attaches metadata
+
+Persists everything to disk
+
+It is the foundation of semantic search and RAG
 
 
