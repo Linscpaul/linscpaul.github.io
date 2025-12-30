@@ -5,6 +5,12 @@ layout: post
 
 ## Building a 7-agent Equity Research Team
 
+### What does the team do?
+The user provides the industry, region, number of stocks, market capitalization, and strategy (growth, value, or mixed).
+The crew collaborates to search for relevant information, conduct valuations, and compile a report—yes, just like a real team.
+
+(A similar setup can be used to spin up legal, engineering, or other specialized teams.)
+
 ### Key Features
 **1. Multiple tools**
 
