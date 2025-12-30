@@ -34,3 +34,5 @@ It’s just like writing a description of the crew you want to hire:
 > 
 > etc
 Simply amazing!
+
+[Download the Guide Here]: https://drive.google.com/drive/folders/1e5okIbs3_-omymMeWX21UZqPJSepX6aN?usp=drive_link
