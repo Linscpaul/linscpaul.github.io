@@ -852,6 +852,7 @@ collection.add(
 )
 ```
 ### What gets stored
+
 | Field                   | Purpose                 | 
 |-------------------------|-------------------------|
 | ids                     | unique identifier       | 
