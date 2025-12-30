@@ -21,8 +21,8 @@ In the high-stakes organization, the heart of `AI engineering` isn't just about 
 * **LLM-as-a-Judge:** Use a high-reasoning model to act as a compliance gatekeeper, grading the agent's responses before they reach the user.
 
 ### 3. Deterministic Fallbacks
-* **Code over Calculation:** If a rule can be hard-coded (e.g., $X \times Y$), do not use an LLM for the math.
-* **Logic Split:** Use the LLM to extract parameters (Variables $X$ and $Y$) but use deterministic code to return the final result.
+* **Code over Calculation:** If a rule can be hard-coded, do not use LLM.
+* **Logic Split:** Use the LLM to extract parameters but use deterministic code to return the final result.
 (refer to example)
 
 ### 4. Structured Prompting
