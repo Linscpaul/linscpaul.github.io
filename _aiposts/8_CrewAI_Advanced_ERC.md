@@ -33,6 +33,7 @@ It’s just like writing a description of the crew you want to hire:
 > the step-by-step work procedures you expect your crew to follow
 > 
 > etc
+
 Simply amazing!
 
 [Download the Guide Here] to explore CrewAI
