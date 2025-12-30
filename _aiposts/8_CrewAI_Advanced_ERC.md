@@ -17,10 +17,15 @@ By default, you can see the agents’ “thought process.” If one approach fai
 I’ve included a step-by-step guide for anyone interested in exploring agentic systems, and I personally find them incredibly powerful. Satisfaction guaranteed.
 Using the CrewAI framework, you define the agent and task using plain English. 
 It’s just like writing a description of the crew you want to hire: 
-> the personality,
-> required skills,
-> expected performance standards,
-> SMART goals,
-> the step-by-step work procedures you expect your crew to follow.
+> the personality
+> 
+> required skills
+> 
+> expected performance standards
+> 
+> SMART goals
+> 
+> the step-by-step work procedures you expect your crew to follow
+> 
 > etc
 Simply amazing!
