@@ -2,7 +2,6 @@
 title:  "[RAG Advanced] Building a Custom RAG Pipeline for Granular Performance Tuning"
 layout: post
 ---
-[last updated: 18 Dec 2025]
 
 ## OVERVIEW
 This project features a high-performance RAG pipeline built from the ground up without high-level frameworks like `LangChain` or `LlamaIndex`. By "mimicking" these frameworks through custom logic, this implementation provides full control over every component, allowing for precise performance fine-tuning and the application of advanced optimization techniques.
