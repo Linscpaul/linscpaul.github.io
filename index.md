@@ -33,7 +33,7 @@ My commitment to technical mastery is reflected in achieving an **'A' grade for 
 > During my MBA, I was consistently ranked among the **TOP 5% in all digital-related courses**, applying quantitative and qualitative analytics across Marketing, Finance, and HR functions.
 
 > #### Enduring Quantitative Strength:
-> My mathematics grades have been **consistently high** throughout my entire education, from primary school through to my degree, underscoring a lifelong aptitude for numerical reasoning.
+> My **mathematics grades** have been **consistently high** throughout my entire education, from primary school through to my degree, underscoring a lifelong aptitude for numerical reasoning.
 
 ### Pioneering Engineering & Research
 
@@ -44,7 +44,7 @@ My commitment to technical mastery is reflected in achieving an **'A' grade for 
 > My final year research involved a complex **optimization and simulation model** designed to significantly reduce the carbon footprint in commercial buildings.
 
 > #### Master’s Focus:
-> I further specialized my expertise with a Master's degree focused on Operations Research, Applied Predictive Methods, Forecasting, and Optimization.
+> I further specialized my expertise with a Master's degree focused on Operations Research, **Applied Predictive Methods**, **Forecasting**, and **Optimization**.
 
 ---
 
@@ -78,11 +78,11 @@ My passion for AI and continuous learning extends into my personal life
 > A vivid reader who constantly seeks to expand knowledge and perspective.
 
 > #### AI-Powered Parenting: 
-> As a father of two, I leverage AI tools to create personalized, engaging learning experiences for my children, moving beyond traditional tuition models.
+> As a father of two, I leverage AI agent to create personalized, engaging learning experiences for my children, moving beyond traditional tuition models.
 
 > #### Endurance & Service:
 > A disciplined individual, I completed a 4-hour marathon at 26 and
-> remain an active community volunteer in Singapore Police Force and nd Flamecamp, where I help cultivate leadership in young learners.
+> remain an active community volunteer in Singapore Police Force and Flamecamp, where I help cultivate leadership in young learners.
 
 ---
 
