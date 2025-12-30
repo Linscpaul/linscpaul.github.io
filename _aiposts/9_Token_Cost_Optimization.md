@@ -1,4 +1,4 @@
 ---
-title:  "[Enterprise Design] Token Optimization Strategy"
+title:  "[Enterprise Design] Token Cost Optimization Strategy"
 layout: post
 ---
