@@ -7,9 +7,14 @@ layout: post
 
 ### Key Features
 **1. Multiple tools**
-**2. Short term and long term memory handling**
-**3. Handoff or Delegate**
-**4. Chain of Thought oberservability**
+
+**2. Multiple agents in a hierarchical setup**
+
+**2. Short-term and long-term memory handling**
+
+**3. Handoff or delegation**
+
+**4. Chain-of-thought observability**
 
 ### Notes
 When I first tried using CrewAI, it was mind-blowing. This particular project demonstrates how AI agents carry out assigned tasks under the guidance of a supervisor.
