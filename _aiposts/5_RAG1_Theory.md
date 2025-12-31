@@ -2,7 +2,7 @@
 title:  "[RAG Theory] Key Concepts of Retrieval Augmented Generation"
 layout: post
 ---
-[last updated: 17 Dec 2025]
+
 ## Why is the Concept of RAG Important?
 
 ### The concept of RAG helps AI **“look things up properly” before it speaks**.
