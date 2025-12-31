@@ -2,7 +2,6 @@
 title:  "[RAG Basics]: Semantic Search Using Embedding LLMs"
 layout: post
 ---
-[last updated: 18 Dec 2025]
 
 ##  Understanding RAG Basics: Semantic Search Using Embedding LLMs
 Have you ever wondered how AI assistants can answer questions about specific documents or latest information? The answer often lies in a technique called RAG - Retrieval-Augmented Generation.
