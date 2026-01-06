@@ -1,13 +1,13 @@
 ---
-title:  "[Transformation] The Agentic Frontier: Aligning Strategy and Operation for the AI Agent Era"
+title:  "[Organizational Transformation] Challenges and Strategies to Win in the AI Agent Era"
 layout: post
 ---
 
 [last updated: Dec 2025]
 
-> This is the first part of a Strategic Guide for organizations to win in the age of Agentic AI.
+> This is the first part of a Strategic Guide to transforming organizations to win in the age of Agentic AI.
 
-# Part 1: The Identity Crisis - Tool or a new class of Worker)
+# Part 1: The Identity Crisis - Tool or a new class of Worker?
 
 Traditionally, leaders viewed technology through a clear lens: 
 
