@@ -20,7 +20,7 @@ show_frame: "/assets/images/unicornbg.svg"
 navigation:                     # accepts {file, title, url, icon, sidebaricon}
   - {title: "Agentic/LLM Engineering", file: "ai.html"}
   - {title: "ML/Data Science", file: "ds.html"}
-  - {title: "Business Blog", file: "bg.html"}
+  - {title: "Strategy/Transformation", file: "bg.html"}
 
 external:                       # accepts {file, title, url, icon, sidebaricon}
   - {title: Mail, icon: envelope, url: "mailto:lsanchuan.m21@gmail.com"}
