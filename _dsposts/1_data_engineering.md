@@ -3,7 +3,7 @@ title: "[Data Engineering] - An Evolving Role Beyond BI and Classical ML"
 layout: post
 ---
 
-# Data Engineering for Agentic Systems/LLM vs Traditional ML/AI and BI
+## Data Engineering for Agentic Systems/LLM vs Traditional ML/AI and BI
 
 Agentic systems represent a **fundamental shift** in how data engineering is practiced. This is not just *LLMs + tools* — it is a move toward **systems that plan, act, observe, and learn autonomously**.
 
