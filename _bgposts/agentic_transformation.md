@@ -3,7 +3,7 @@ title:  "[Agentic Transformation] Agentic AI: Logic, Maturity, and Strategy "
 layout: post
 ---
 
-📄 [Agentic AI Governance and Constraint](/assets/docs/Agentic_AI_Governance_and_Constraint.pdf)
+📄 [CLick to See PDF - Agentic AI Governance and Constraint](/assets/docs/Agentic_AI_Governance_and_Constraint.pdf)
 
 ## Agentic AI: Logic, Maturity, and Strategy
 
