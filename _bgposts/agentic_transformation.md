@@ -1,5 +1,5 @@
 ---
-title:  "[Agentic Transformation] "
+title:  "[Agentic Transformation] A Path To Agentic Transformation "
 layout: post
 ---
 
