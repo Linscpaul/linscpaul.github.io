@@ -1,5 +1,5 @@
 ---
-title:  "[Agentic Transformation] Part 1: technological definition, organizational impact, governance, and leadership requirements. "
+title:  "[Agentic Transformation] Part 1: Definition, organizational impact, governance, and leadership requirements. "
 layout: post
 ---
 
