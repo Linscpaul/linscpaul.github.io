@@ -9,6 +9,11 @@ layout: post
   <img src="/assets/images/From_Technology_to_Leadership_Reality.png" alt="Mind Map" width="300">
 </a>
 
+<a href="/assets/images/From_Technology_to_Leadership_Reality.png" target="_blank" rel="noopener">
+  <img src="/assets/images/From_Technology_to_Leadership_Reality.png" alt="Photo" width="300">
+</a>
+
+
 This article address several fundamental business questions essential for organisations transitioning to Agentic AI. These questions cover the technological definition, organizational impact, governance, and leadership requirements.
 
 ## 1. What is the technical definition of Agentic AI?
