@@ -5,6 +5,10 @@ layout: post
 
 📄 [CLick to See PDF - Part 1_Agentic AI Transformation: From Technology to Leadership Reality](/assets/docs/Agentic_AI_Operational_Reality.pdf)
 
+<a href="/assets/images/From_Technology_to_Leadership_Reality.png">
+  <img src="/assets/images/From_Technology_to_Leadership_Reality.png" alt="Mind Map" width="300">
+</a>
+
 This article address several fundamental business questions essential for organisations transitioning to Agentic AI. These questions cover the technological definition, organizational impact, governance, and leadership requirements.
 
 ## 1. What is the technical definition of Agentic AI?
