@@ -3,16 +3,11 @@ title:  "[Agentic Transformation] Part 1: Definition, organizational impact, gov
 layout: post
 ---
 
-📄 [CLick to See PDF - Part 1_Agentic AI Transformation: From Technology to Leadership Reality](/assets/docs/Agentic_AI_Operational_Reality.pdf)
+**📄 [CLick to See PDF - Part 1_Agentic AI Transformation: From Technology to Leadership Reality](/assets/docs/Agentic_AI_Operational_Reality.pdf)**
 
 <a href="/assets/images/From_Technology_to_Leadership_Reality.png">
   <img src="/assets/images/From_Technology_to_Leadership_Reality.png" alt="Mind Map" width="300">
 </a>
-
-<a href="/assets/images/From_Technology_to_Leadership_Reality.png" target="_blank" rel="noopener">
-  <img src="/assets/images/From_Technology_to_Leadership_Reality.png" alt="Photo" width="300">
-</a>
-
 
 This article address several fundamental business questions essential for organisations transitioning to Agentic AI. These questions cover the technological definition, organizational impact, governance, and leadership requirements.
 
