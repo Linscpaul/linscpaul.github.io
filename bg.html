@@ -4,7 +4,10 @@ layout: default
 ---
 
 <main>
-  <header><h1>{{ include.title | default: page.title }}</h1></header>
+  <header>
+    <h1>{{ include.title | default: page.title }}</h1>
+    <p>This page focuses on strategy—“how to get there”—and is intended for businesses aspiring to move up the Agentic AI ladder for competitive advantage, regardless of their current state. It offers practical transformation guides and execution-ready tools to make it happen, with no fluff.</p>
+  </header>
   <nav class="smooth">
     {% assign reversed = site.bgposts | reverse %}
     {% for bgpost in reversed %}
