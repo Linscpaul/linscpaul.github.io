@@ -9,6 +9,8 @@ This article address several fundamental business questions essential for organi
 
 The article address several critical business questions regarding the implementation and governance of agentic AI systems. These questions address strategic, operational, and risk-related concerns:
 
+<img src="/assets/images/Agentic_Organisation_Maturity_Model.png" alt="Mind Map" width="300">
+
 ## 1. How is "Agentic Maturity" actually defined?
 
 Maturity is not measured by the sophistication of the AI tools used, but by the deliberate design of governance. 
